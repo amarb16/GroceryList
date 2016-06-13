@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Grocery List</title>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <link rel="icon" href="groc.png">
+  </head>
+
+  <body>
+    <form id="Groceries">
+
+        <h1><b><i>My Grocery List</i></b></h1>
+
+        <input type="text"
+               name="itemName"
+               placeholder="Enter Item"
+               required>
+
+        <button type="submit" class="button">Add Item</button>
+    </form>
+    <!-- everytime we submit the form, it'll build the ist items and stick them in the ul -->
+    <!-- command slash is how you comment in ~**ANYTHING**~ -->
+    <ul id="groceryList">
+      <li class="template">
+        <a href="#" class="delete">(delete)</a>
+        <!-- <a href="#" class="edit">(edit)</a> -->
+      </li>
+    </ul></center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script src="delete-g.js"></script>
+  </body>
+</html>
