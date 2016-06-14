@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="itemApp">
 
   <head>
     <meta charset="utf-8">
     <title>Grocery List</title>
     <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
     <link rel="icon" href="groc.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
   </head>
 
-  <body>
-    <form id="Groceries">
+  <body ng-controller="ItemController">
 
-        <h1><b><i>My Grocery List</i></b></h1>
-
+    <h1><b><i>My Grocery List</i></b></h1>
+    <form id="Groceries" ng-submit="addItem()" ng-hide="editing">
         <input type="text"
-               name="itemName"
+               ng-model="item.name"
                placeholder="Enter Item"
                required>
 
@@ -22,14 +23,17 @@
     </form>
     <!-- everytime we submit the form, it'll build the ist items and stick them in the ul -->
     <!-- command slash is how you comment in ~**ANYTHING**~ -->
-    <ul id="groceryList">
-      <li class="template">
-        <a href="#" class="delete">(delete)</a>
-        <!-- <a href="#" class="edit">(edit)</a> -->
-      </li>
-    </ul></center>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="app.js"></script>
-    <script src="delete-g.js"></script>
+    <div>
+      <ul ng-cloak>
+        <li ng-repeat="item in items track by $index">
+          <span ng-bind="item.name"></span>
+          <a href="#" ng-click="editItem(item)">(edit)</a>
+          <a href="#" ng-click="removeItem($index)">(remove)</a>
+        </li>
+      </ul>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+
   </body>
 </html>
+<!-- have class name that uses little curly braces and then in stylesheet make it so that anything with that class gets striked out -->
