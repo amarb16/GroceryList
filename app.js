@@ -2,24 +2,20 @@ angular.module('itemApp', [])
 .controller('ItemController', function($scope) {
   $scope.editing = false;
   $scope.items = [
-    { name: 'Food'},
-    { name: 'More Food'}
+    { name: 'Test'},
+    { name: 'More Test'}
   ];
-  $scope.item = { name: '', errors: [] };
+  $scope.item = { name: ''};
   $scope.addItem = function() {
-    if ($scope.item.name.trim() !== '') {
       $scope.formError = false;
       $scope.items.push($scope.item);
-      $scope.item = { name: '', errors: [] };
-    }
-    else {
-      $scope.item.errors.push('Whoops, you forgot to add an item!');
-    }
+      $scope.item = { name: ''}
   }
   $scope.removeLastItem = function() {
     $scope.items.pop();
   }
   $scope.editItem = function(item) {
+    $scope.formError = false;
     $scope.editing = true;
     $scope.item = item;
   }

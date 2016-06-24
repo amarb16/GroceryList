@@ -20,3 +20,10 @@ ul {
   list-style: none;
   padding-left: 45%;
 }
+img {
+  display: inline;
+  background-color: orange;
+  float: left;
+  height: 35px;
+  width: 35px;
+}
