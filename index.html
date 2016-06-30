@@ -8,13 +8,14 @@
     <link rel="icon" href="groc.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
     <script src="app.js"></script>
-    <style> body, a, a:hover { cursor:url('http://www.dolliehost.com/dolliecrave/cursors/cursors-food/food34.gif'), auto }</style>
-
+    <script src="animatemenu.js"></script>
   </head>
 
   <body ng-controller="ItemController">
     <div class="top">
-      <img src="menubutton.png"></img>
+      <div class="menupic">
+        <img src="menubutton.png"></img>
+      </div>
       <h1><b><i>My Grocery List</i></b></h1>
     </div>
     <form id="Groceries" ng-submit="addItem()" ng-hide="editing">
